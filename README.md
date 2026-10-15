@@ -20,6 +20,11 @@ review gates around them.
   Zod contracts, signature-checked webhook, authenticated send, dry-run
   mode, Vitest + Supertest, CI.
 
+- [whatsapp-cloud-api-nestjs](https://github.com/TheLionGab/whatsapp-cloud-api-nestjs):
+  the same service ported to NestJS: module, controllers, provider with an
+  injectable `fetch`, guards, Zod pipe, exception filter. 23 tests, 0
+  audit findings. A port of the Express project above, not a new product.
+
 ## What I work on (private repositories)
 
 Most of my code lives in private repositories for clients and my own
@@ -35,10 +40,6 @@ products, so it is not listed here. I am happy to walk through it.
   merge or write to production on their own. Security review rounds on it
   found and closed real issues (for example a race between reading CI
   status and the commit SHA).
-
-## Coming next to this profile
-
-- The WhatsApp service ported to NestJS
 
 ## Stack
 
