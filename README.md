@@ -7,9 +7,18 @@ review gates around them.
 
 ## Public work
 
+- [agent-workflow-gates](https://github.com/TheLionGab/agent-workflow-gates):
+  pure decision gates for multi-agent workflows. The agent only reads; a
+  deterministic function decides the merge (path allowlist, single SHA,
+  CI), and untrusted text is marked as data. 18 tests, checked by mutation.
+- [llm-answer-eval](https://github.com/TheLionGab/llm-answer-eval):
+  offline, deterministic grader for LLM chat answers (Deno/TypeScript).
+  Fixed questions, hard safety failures, reproducible score: 18 of 19
+  (0.947) from a production run, with the failing case explained.
 - [whatsapp-cloud-api-node](https://github.com/TheLionGab/whatsapp-cloud-api-node):
   Node 22 + TypeScript strict service for the WhatsApp Business Cloud API.
-  Zod contracts, injectable `fetch`, dry-run mode, Vitest + Supertest, CI.
+  Zod contracts, signature-checked webhook, authenticated send, dry-run
+  mode, Vitest + Supertest, CI.
 
 ## What I work on (private repositories)
 
@@ -29,8 +38,6 @@ products, so it is not listed here. I am happy to walk through it.
 
 ## Coming next to this profile
 
-- RAG evaluation harness, without the proprietary corpus
-- The agent workflow gates, with tests
 - The WhatsApp service ported to NestJS
 
 ## Stack
