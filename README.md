@@ -8,7 +8,7 @@ review gates around them.
 ## Public work
 
 - [whatsapp-cloud-api-node](https://github.com/TheLionGab/whatsapp-cloud-api-node):
-  Node 20 + TypeScript strict service for the WhatsApp Business Cloud API.
+  Node 22 + TypeScript strict service for the WhatsApp Business Cloud API.
   Zod contracts, injectable `fetch`, dry-run mode, Vitest + Supertest, CI.
 
 ## What I work on (private repositories)
