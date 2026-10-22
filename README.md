@@ -1,47 +1,40 @@
 # Gabriel
 
-Software engineer from Mato Grosso, Brazil. I build TypeScript/Node
-backends, React Native (Expo) apps, and AI features with Supabase/Postgres,
-and I use coding agents (Claude Code, Codex) daily, with tests, CI, and
-review gates around them.
+**Software Engineer · TypeScript · Backend · AI Evaluation**
 
-## Public work
+I build TypeScript backends, React Native / Expo apps, and AI features with
+Supabase and Postgres. I use coding agents with automated tests, CI, and
+explicit review gates.
 
-- [agent-workflow-gates](https://github.com/TheLionGab/agent-workflow-gates):
-  pure decision gates for multi-agent workflows. The agent only reads; a
-  deterministic function decides the merge (path allowlist, single SHA,
-  CI), and untrusted text is marked as data. 18 tests, checked by mutation.
-- [llm-answer-eval](https://github.com/TheLionGab/llm-answer-eval):
-  offline, deterministic grader for LLM chat answers (Deno/TypeScript).
-  Fixed questions, hard safety failures, reproducible score: 18 of 19
-  (0.947) from a production run, with the failing case explained.
-- [whatsapp-cloud-api-node](https://github.com/TheLionGab/whatsapp-cloud-api-node):
-  Node 22 + TypeScript strict service for the WhatsApp Business Cloud API.
-  Zod contracts, signature-checked webhook, authenticated send, dry-run
-  mode, Vitest + Supertest, CI.
+Mato Grosso, Brazil · [LinkedIn](https://www.linkedin.com/in/liongabdev/)
 
-- [whatsapp-cloud-api-nestjs](https://github.com/TheLionGab/whatsapp-cloud-api-nestjs):
-  the same service ported to NestJS: module, controllers, provider with an
-  injectable `fetch`, guards, Zod pipe, exception filter. 23 tests, 0
-  audit findings. A port of the Express project above, not a new product.
+## Featured engineering work
 
-## What I work on (private repositories)
+| Project | Problem and approach | Evidence to inspect |
+| --- | --- | --- |
+| [Agent Merge Guard](https://github.com/TheLionGab/agent-merge-guard) | Pure decision functions reject unreviewed PR changes, incomplete inspections, and unexpected identities. | 21 tests; commit race, rename allowlist, and hostile text cases. |
+| [Deterministic Answer Grader](https://github.com/TheLionGab/deterministic-answer-grader) | Offline grading of collected LLM answers with explicit safety and quality rules. | 13 tests; a versioned 19-case fixture; reproducible 18/19 result with the false negative explained. |
+| [WhatsApp Gateway — Express](https://github.com/TheLionGab/whatsapp-gateway-express) | A small HTTP service with signed webhooks, authenticated sending, and an injectable provider. | 14 tests; strict TypeScript; Vitest + Supertest; CI. |
+| [WhatsApp Gateway — NestJS](https://github.com/TheLionGab/whatsapp-gateway-nestjs) | The same service expressed through modules, guards, pipes, filters, and dependency injection. | 23 tests, including raw-body signatures, guard ordering, and log redaction. |
 
-Most of my code lives in private repositories for clients and my own
-products, so it is not listed here. I am happy to walk through it.
+The gateways are two implementations of one service. Compare them to see
+architectural tradeoffs. Each project documents its design, test strategy,
+setup, and limitations; none requires a paid API to run its test suite.
 
-- Pulso do Campo, a farming app with production RAG over an agronomic
-  corpus. Retrieval uses curated metadata plus reranking, and the final
-  answers are scored by a fixed 19-question evaluation: 18 of 19 passed
-  (0.947), with zero dose, product or brand violations, on the first
-  production run (15 Oct 2026).
-- A multi-agent workflow that finds problems, has a skeptic try to refute
-  each finding, ranks them, and opens PRs for human review. Agents never
-  merge or write to production on their own. Security review rounds on it
-  found and closed real issues (for example a race between reading CI
-  status and the commit SHA).
+## Engineering focus
+
+- Separate deterministic decisions from model output and external I/O.
+- Write tests for incorrect implementations, including races and security boundaries.
+- Make results reproducible and document where the evidence stops.
+
+## Product work
+
+My work also includes **Pulso do Campo**, an agricultural app, and private
+client projects. The public repositories above provide inspectable examples
+without exposing private source code. The grader includes a dated answer
+fixture; reproducing it does not verify the current production system.
 
 ## Stack
 
-TypeScript, Node.js, Express, Zod, Vitest, React Native/Expo,
-Supabase/Postgres (RLS, pgvector), GitHub Actions.
+TypeScript · Node.js · Express · NestJS · Zod · Vitest · React Native / Expo ·
+Supabase / Postgres · GitHub Actions
