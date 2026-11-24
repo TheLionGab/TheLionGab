@@ -7,23 +7,22 @@ review gates around them.
 
 ## Public work
 
-- [agent-workflow-gates](https://github.com/TheLionGab/agent-workflow-gates):
+- [agent-merge-guard](https://github.com/TheLionGab/agent-merge-guard):
   pure decision gates for multi-agent workflows. The agent only reads; a
   deterministic function decides the merge (path allowlist, single SHA,
-  CI), and untrusted text is marked as data. 18 tests, checked by mutation.
-- [llm-answer-eval](https://github.com/TheLionGab/llm-answer-eval):
+  CI), and untrusted text is marked as data. 21 tests, checked by mutation.
+- [deterministic-answer-grader](https://github.com/TheLionGab/deterministic-answer-grader):
   offline, deterministic grader for LLM chat answers (Deno/TypeScript).
   Fixed questions, hard safety failures, reproducible score: 18 of 19
   (0.947) from a production run, with the failing case explained.
-- [whatsapp-cloud-api-node](https://github.com/TheLionGab/whatsapp-cloud-api-node):
+- [whatsapp-gateway-express](https://github.com/TheLionGab/whatsapp-gateway-express):
   Node 22 + TypeScript strict service for the WhatsApp Business Cloud API.
   Zod contracts, signature-checked webhook, authenticated send, dry-run
   mode, Vitest + Supertest, CI.
-
-- [whatsapp-cloud-api-nestjs](https://github.com/TheLionGab/whatsapp-cloud-api-nestjs):
+- [whatsapp-gateway-nestjs](https://github.com/TheLionGab/whatsapp-gateway-nestjs):
   the same service ported to NestJS: module, controllers, provider with an
-  injectable `fetch`, guards, Zod pipe, exception filter. 23 tests, 0
-  audit findings. A port of the Express project above, not a new product.
+  injectable `fetch`, guards, Zod pipe, exception filter. 23 tests, and
+  `npm audit` runs as a CI gate. A port of the Express project above, not a new product.
 
 ## What I work on (private repositories)
 
@@ -40,6 +39,12 @@ products, so it is not listed here. I am happy to walk through it.
   merge or write to production on their own. Security review rounds on it
   found and closed real issues (for example a race between reading CI
   status and the commit SHA).
+
+## How the public repos are kept
+
+Every repo runs CI on each PR with a read-only token, actions pinned by
+commit SHA, a 10-minute timeout, and Dependabot. The main branch only
+changes through a pull request with green CI.
 
 ## Stack
 
